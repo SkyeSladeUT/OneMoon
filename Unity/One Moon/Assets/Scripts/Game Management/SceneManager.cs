@@ -1,25 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class SceneManager : MonoBehaviour
+namespace GameManagement
 {
-    [SerializeField]
-    private bool Indoor;
-
-    private InputManager _inputManager;
-
-    private void Start()
+    public class SceneManager : MonoBehaviour
     {
-        _inputManager = InputManager.Instance;
-        if (Indoor)
-        {
-            _inputManager.EnableInteriorMovement();
-        }
-        else
-        {
-            _inputManager.EnableExteriorMovement();
-        }
-    }
+        [SerializeField]
+        private bool Indoor;
 
+        private InputManager _inputManager;
+
+        private void Start()
+        {
+            _inputManager = InputManager.Instance;
+            if (Indoor)
+            {
+                _inputManager.EnableInteriorMovement();
+            }
+            else
+            {
+                _inputManager.EnableExteriorMovement();
+            }
+        }
+
+    }
 }
